@@ -1,13 +1,16 @@
 "use strict";
 
-function addMovie(movie){
+$('#my-form').submit( addMovie );
+
+function addMovie(e){
     $.ajax({
         type: "POST",
         dataType: "json",
         url: "https://localhost:44325/api/movie",
         contentType: 'application/json',
-        data: {"Title": movie[0].value, "Director": movie[1].value, "Genre": movie[2].value}
+        data: JSON.stringify({Title: this["title"].value, Director: this["director"].value, Genre: this["genre"].value})
     });
+    e.preventDefault();
 }
 
 $(document).ready(function(){
