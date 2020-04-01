@@ -1,5 +1,7 @@
 "use strict";
 
+var movieIds = new Object;
+
 $('#my-form').submit( addMovie );
 
 function addMovie(e){
@@ -38,7 +40,9 @@ $(document).ready(function(){
         // manipulated DOM to append rows to movie table
         success: function(data){
             // $("#movie-list").html('');
+            movieIds = new Object;
            $.each(data, function (i, item){
+               movieIds["movie" + i] = item.movieId;
                var movie = "<tr id='movie"+ i + "'>" +
                "<td>" + item.title + "</td>" +
                "<td>" + item.director + "</td>" +
