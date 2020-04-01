@@ -18,11 +18,11 @@ function addMovie(e){
 
 function editForm(rowId){
     var rowEdit = 
-    "<form>" +
-    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(1)").html().toString() + "'></td>" +
-    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(2)").html().toString() + "'></td>" +
-    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(3)").html().toString() + "'></td>" +
-    "<td>" + "<input type='submit'></td>" +
+    "<form id='edit'>" +
+    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(1)").html().toString() + "' form='edit'></td>" +
+    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(2)").html().toString() + "' form='edit'></td>" +
+    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(3)").html().toString() + "' form='edit'></td>" +
+    "<td>" + "<input type='submit' form='edit'></td>" +
     "</form>";
     $("#" + rowId).html(rowEdit);
 }
