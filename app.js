@@ -14,6 +14,19 @@ function addMovie(e){
     // e.preventDefault();
 }
 
+// $('#movie-list').submit(editMovieDetails);
+
+function editForm(rowId){
+    var rowEdit = 
+    "<form>" +
+    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(1)").html().toString() + "'></td>" +
+    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(2)").html().toString() + "'></td>" +
+    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(3)").html().toString() + "'></td>" +
+    "<td>" + "<input type='submit'></td>" +
+    "</form>";
+    $("#" + rowId).html(rowEdit);
+}
+
 $(document).ready(function(){
     // queried database for list of movie object
     $.ajax({
@@ -24,13 +37,13 @@ $(document).ready(function(){
 
         // manipulated DOM to append rows to movie table
         success: function(data){
-            $("#movie-list").html(
-            '');
+            // $("#movie-list").html('');
            $.each(data, function (i, item){
-               var movie = "<tr>" +
+               var movie = "<tr id='movie"+ i + "'>" +
                "<td>" + item.title + "</td>" +
                "<td>" + item.director + "</td>" +
                "<td>" + item.genre + "</td>" +
+               "<td><button onclick='editForm(\"movie" + i + "\")'>Edit</button></td>"
                "</tr>";
 
                $('#movie-list').append(movie);
@@ -39,6 +52,3 @@ $(document).ready(function(){
     });
 });
 
-function editMovieDetails(movie){
-
-}
