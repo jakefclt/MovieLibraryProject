@@ -1,0 +1,42 @@
+body{
+    background-image: url("img/photo-1507499739999-097706ad8914.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+    img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+  
+  .navbar-brand{
+	color: red;
+	font-size: 20px;
+	-webkit-text-stroke: 1px rgba(0, 140, 186, 0.5);
+}
+
+th{
+    color: red;
+    -webkit-text-stroke: .5px black;
+    /* -webkit-text-stroke: .1px red; */
+}
+
+#movie-list{
+    color: black;
+    -webkit-text-stroke: .5px black
+}
+
+
+.table{
+    margin-top: 20px;
+}
+
+#my-form{
+    margin-top: 50px;
+    margin-left: 400px;
+    margin-bottom: 50px;
+}
+
+.container{
+    background-color: rgba(255,255,255,0.2);
+}
