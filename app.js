@@ -2,13 +2,12 @@
 
 var movieIds = new Object;
 
-$('#my-form').submit( addMovie );
+$('#my-form').submit(addMovie );
 
 function addMovie(e){
     $.ajax({
         type: "POST",
         async: false,
-        dataType: "json",
         url: "https://localhost:44325/api/movie",
         contentType: 'application/json',
         data: JSON.stringify({Title: this["title"].value, Director: this["director"].value, Genre: this["genre"].value})
@@ -16,16 +15,30 @@ function addMovie(e){
     // e.preventDefault();
 }
 
-// $('#movie-list').submit(editMovieDetails);
+function PUTAction(id, title, director, genre){
+    $.ajax({
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        type: "PUT",
+        async: false,
+        dataType: "json",
+        url: "https://localhost:44325/api/movie",
+        success: console.log("Yee"),
+        contentType: 'application/json',
+        data: JSON.stringify({MovieId: id, Title: title, Director: director, Genre: genre})
+    });
+};
 
 function editForm(rowId){
     var rowEdit = 
-    "<form id='edit'>" +
-    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(1)").html().toString() + "' form='edit'></td>" +
-    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(2)").html().toString() + "' form='edit'></td>" +
-    "<td>" + "<input type='text' value='" + $("#" + rowId + " td:nth-child(3)").html().toString() + "' form='edit'></td>" +
-    "<td>" + "<input type='submit' form='edit'></td>" +
-    "</form>";
+    // "<div id=\"edit\">" +
+    "<td>" + "<input type='text' id='titleUpdate' value='" + $("#" + rowId + " td:nth-child(1)").html().toString() + "'></td>" +
+    "<td>" + "<input type='text' id='directorUpdate' value='" + $("#" + rowId + " td:nth-child(2)").html().toString() + "'></td>" +
+    "<td>" + "<input type='text' id='genreUpdate' value='" + $("#" + rowId + " td:nth-child(3)").html().toString() + "'></td>" +
+    "<td>" + "<button onclick='PUTAction(" + movieIds[rowId] + ", " + "$(\"input#titleUpdate\").val()" + ", " + "$(\"input#directorUpdate\").val()" + ", " + "$(\"input#genreUpdate\").val()" + ")'>Submit</button></td>";
+    // + "</div>";
     $("#" + rowId).html(rowEdit);
 }
 
