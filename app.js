@@ -25,7 +25,7 @@ function PUTAction(id, title, director, genre){
         async: false,
         dataType: "json",
         url: "https://localhost:44325/api/movie",
-        success: console.log("Yee"),
+        success: location.reload(),
         contentType: 'application/json',
         data: JSON.stringify({MovieId: id, Title: title, Director: director, Genre: genre})
     });
