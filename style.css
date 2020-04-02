@@ -11,13 +11,14 @@ body{
   
   .navbar-brand{
 	color: red;
-	font-size: 20px;
+	font-size: 15px;
 	-webkit-text-stroke: 1px rgba(0, 140, 186, 0.5);
 }
 
 th{
-    color: red;
-    -webkit-text-stroke: .5px black;
+    color: rgba(0, 140, 186, 0.5);
+    -webkit-text-stroke: 1px black;
+    font-size: 18px;
     /* -webkit-text-stroke: .1px red; */
 }
 
