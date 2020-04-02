@@ -15,7 +15,7 @@ function addMovie(e){
     // e.preventDefault();
 }
 
-function PUTAction(id, title, director, genre){
+function UpdateMovie(id, title, director, genre){
     $.ajax({
         headers: {
             'Accept': 'application/json',
@@ -37,9 +37,20 @@ function editForm(rowId){
     "<td>" + "<input type='text' id='title" + rowId + "' value='" + $("#" + rowId + " td:nth-child(1)").html().toString() + "'></td>" +
     "<td>" + "<input type='text' id='director" + rowId + "' value='" + $("#" + rowId + " td:nth-child(2)").html().toString() + "'></td>" +
     "<td>" + "<input type='text' id='genre" + rowId + "' value='" + $("#" + rowId + " td:nth-child(3)").html().toString() + "'></td>" +
-    "<td>" + "<button onclick='PUTAction(" + movieIds[rowId] + ", " + "$(\"input#title" + rowId + "\").val()" + ", " + "$(\"input#director" + rowId + "\").val()" + ", " + "$(\"input#genre" + rowId + "\").val()" + ")'>Submit</button></td>";
+    "<td>" + "<button onclick='UpdateMovie(" + movieIds[rowId] + ", " + "$(\"input#title" + rowId + "\").val()" + ", " + "$(\"input#director" + rowId + "\").val()" + ", " + "$(\"input#genre" + rowId + "\").val()" + ")'>Submit</button></td>";
     // + "</div>";
     $("#" + rowId).html(rowEdit);
+}
+
+function deleteMovie(movieId){
+    $.ajax({
+        type: "DELETE",
+        async: false,
+        dataType: "json",
+        url: "https://localhost:44325/api/movie/" + movieId,
+        success: location.reload(),
+        contentType: 'application/json'
+    });
 }
 
 $(document).ready(function(){
@@ -60,7 +71,8 @@ $(document).ready(function(){
                "<td>" + item.title + "</td>" +
                "<td>" + item.director + "</td>" +
                "<td>" + item.genre + "</td>" +
-               "<td><button onclick='editForm(\"movie" + i + "\")'>Edit</button></td>"
+               "<td><button onclick='editForm(\"movie" + i + "\")'>Edit</button></td>" + 
+               "<td><button onclick='deleteMovie(movieIds[\"movie" + i + "\"])'>Delete</button>" +
                "</tr>";
 
                $('#movie-list').append(movie);
