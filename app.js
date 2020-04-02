@@ -15,7 +15,7 @@ function addMovie(e){
     // e.preventDefault();
 }
 
-function UpdateMovie(id, title, director, genre){
+function updateMovie(id, title, director, genre){
     $.ajax({
         headers: {
             'Accept': 'application/json',
@@ -37,7 +37,7 @@ function editForm(rowId){
     "<td>" + "<input type='text' id='title" + rowId + "' value='" + $("#" + rowId + " td:nth-child(1)").html().toString() + "'></td>" +
     "<td>" + "<input type='text' id='director" + rowId + "' value='" + $("#" + rowId + " td:nth-child(2)").html().toString() + "'></td>" +
     "<td>" + "<input type='text' id='genre" + rowId + "' value='" + $("#" + rowId + " td:nth-child(3)").html().toString() + "'></td>" +
-    "<td>" + "<button onclick='UpdateMovie(" + movieIds[rowId] + ", " + "$(\"input#title" + rowId + "\").val()" + ", " + "$(\"input#director" + rowId + "\").val()" + ", " + "$(\"input#genre" + rowId + "\").val()" + ")'>Submit</button></td>";
+    "<td>" + "<button onclick='updateMovie(" + movieIds[rowId] + ", " + "$(\"input#title" + rowId + "\").val()" + ", " + "$(\"input#director" + rowId + "\").val()" + ", " + "$(\"input#genre" + rowId + "\").val()" + ")'>Submit</button></td>";
     // + "</div>";
     $("#" + rowId).html(rowEdit);
 }
