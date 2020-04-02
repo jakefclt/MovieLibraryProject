@@ -21,8 +21,7 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>						
+						<li><a onclick="showAddMovie()">Add Movie</a></li>				
           </ul>
           
 
@@ -35,6 +34,7 @@
 	</nav>
 </nav>
 
+<<<<<<< HEAD
 <div id="addMovie">
   <!-- <form action="https://localhost:44325/api/movie" method="POST" enctype="text/plain"> -->
     
@@ -52,6 +52,25 @@
     <input type="submit" button type="button" class="btn btn-info">
   </form>
 
+=======
+<div class="container" id="containerForAddMovieForm">
+  <div id="addMovie">
+    <!-- <form action="https://localhost:44325/api/movie" method="POST" enctype="text/plain"> -->
+    <form id="my-form">
+      <h3>Add Movie</h3>
+      <label for="title">
+        <input type="text" placeholder="Movie Title" id="title" name="title">
+      </label>
+      <label for="director">
+        <input type="text" placeholder="Director" id="director" name="director">
+      </label>
+      <label for="genre">
+        <input type="text" placeholder="Genre" id="genre" name="genre">
+      </label>
+      <input type="submit" button type="button" class="btn btn-info">
+    </form>
+  </div>
+>>>>>>> bf972f5f0ba2ad1a7eca26fa0b9a9c81de9a9da9
 </div>
 
 
@@ -65,6 +84,7 @@
                 <th>Director</th>
                 <th>Genre</th>
                 <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead> 
         <tbody id="movie-list">
