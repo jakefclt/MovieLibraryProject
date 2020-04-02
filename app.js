@@ -34,10 +34,10 @@ function PUTAction(id, title, director, genre){
 function editForm(rowId){
     var rowEdit = 
     // "<div id=\"edit\">" +
-    "<td>" + "<input type='text' id='titleUpdate' value='" + $("#" + rowId + " td:nth-child(1)").html().toString() + "'></td>" +
-    "<td>" + "<input type='text' id='directorUpdate' value='" + $("#" + rowId + " td:nth-child(2)").html().toString() + "'></td>" +
-    "<td>" + "<input type='text' id='genreUpdate' value='" + $("#" + rowId + " td:nth-child(3)").html().toString() + "'></td>" +
-    "<td>" + "<button onclick='PUTAction(" + movieIds[rowId] + ", " + "$(\"input#titleUpdate\").val()" + ", " + "$(\"input#directorUpdate\").val()" + ", " + "$(\"input#genreUpdate\").val()" + ")'>Submit</button></td>";
+    "<td>" + "<input type='text' id='title" + rowId + "' value='" + $("#" + rowId + " td:nth-child(1)").html().toString() + "'></td>" +
+    "<td>" + "<input type='text' id='director" + rowId + "' value='" + $("#" + rowId + " td:nth-child(2)").html().toString() + "'></td>" +
+    "<td>" + "<input type='text' id='genre" + rowId + "' value='" + $("#" + rowId + " td:nth-child(3)").html().toString() + "'></td>" +
+    "<td>" + "<button onclick='PUTAction(" + movieIds[rowId] + ", " + "$(\"input#title" + rowId + "\").val()" + ", " + "$(\"input#director" + rowId + "\").val()" + ", " + "$(\"input#genre" + rowId + "\").val()" + ")'>Submit</button></td>";
     // + "</div>";
     $("#" + rowId).html(rowEdit);
 }
