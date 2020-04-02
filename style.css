@@ -1,29 +1,25 @@
 body{
-    background-image: url("img/photo-1507499739999-097706ad8914.jfif");
-    background-repeat: no-repeat;
-    background-size: cover;
-
+    background-color: #211E2E
+   
 }
+
+
 
     img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
   }
   
-  .navbar-brand{
-	color: red;
-	font-size: 15px;
-	-webkit-text-stroke: 1px rgba(0, 140, 186, 0.5);
-}
+
 
 th{
-    color: rgba(0, 140, 186, 0.5);
+    color: #6EAF1F;
     -webkit-text-stroke: 1px black;
     font-size: 18px;
     /* -webkit-text-stroke: .1px red; */
 }
 
 #movie-list{
-    color: black;
+    color: White;
     -webkit-text-stroke: .5px black
 }
 
@@ -39,5 +35,9 @@ th{
 }
 
 .container{
-    background-color: rgba(255,255,255,0.2);
+    background-color: #575747
+}
+
+.navbar.navbar-default{
+    background-color: #211E2E
 }
