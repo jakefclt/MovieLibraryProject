@@ -81,3 +81,6 @@ $(document).ready(function(){
     });
 });
 
+function showAddMovie(){
+    document.getElementById("my-form").style.display = "inline";
+}
